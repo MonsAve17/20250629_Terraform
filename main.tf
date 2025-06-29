@@ -1,9 +1,11 @@
-provider "aws" {
-  version = "2.33.0"
-
-  region = var.aws_region
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
-
 resource "aws_vpc" "qyt_aws_vpc" {
   cidr_block = "10.0.0.0/16"
 
